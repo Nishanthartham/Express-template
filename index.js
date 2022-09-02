@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import { getBooks } from "./routes/bookController.js";
+import { postBooks } from "./routes/bookController.js";
 
 const Router = express.Router();
 // import bookData from
@@ -16,3 +17,4 @@ mongoose.connect(uri, () => {
 });
 
 app.get("/books", getBooks);
+app.post("/books", postBooks);
